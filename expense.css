@@ -1,0 +1,250 @@
+:root {
+    --bg-dark: #0f172a;
+    --bg-main: #1e293b;
+    --text-white: #f8fafc;
+    --text-grey: #94a3b8;
+    --accent: #38bdf8;
+    --success: #4ade80;
+    --danger: #f87171;
+}
+.head{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.head h2{
+font-size: 40px;
+color: var(--text-white);
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding-top: 50px;
+}
+/* Wrapper that holds both containers */
+.sides {
+    display: flex;
+    width: 70%; /* CHANGED: This sets the main width to 70% of the page */
+    max-width: 1400px; /* Optional: prevents it from getting too wide on huge screens */
+    align-items: flex-start; /* Changed from center to align tops properly */
+    justify-content: space-between; /* Pushes containers to edges */
+    gap: 20px;
+}
+
+/* Individual Left/Right Containers */
+.container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    background-color: var(--bg-dark);
+    padding: 25px 30px;
+    gap: 15px;
+    height: 70vh;
+    /* They take up roughly half of the .sides wrapper each */
+    width: 48%; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustment: On small screens, go back to full width */
+@media (max-width: 1024px) {
+    .sides {
+        width: 90%; /* Wider on tablets/laptops so it's not too squashed */
+    }
+}
+
+@media (max-width: 768px) {
+    .sides {
+        width: 95%;
+        flex-direction: column; /* Stack them vertically on mobile */
+    }
+    .container {
+        width: 100%;
+    }
+}
+.container-head{
+    margin-top:20px;
+    color: var(--text-grey);
+}
+.totals{
+    margin-top:10px ;
+    display: flex;
+    gap: 10px;
+
+}
+.balance h6{
+    color: var(--text-grey);
+}
+.balance p{
+    font-size:40px ;
+    margin-right:5px;
+    margin-top: 5px;
+}
+.incomes p{
+    text-align: center;
+    color: var(--success);
+}
+.amount p{
+    text-align: center;
+    color: var(--danger);
+}
+/* ==================== FORM STYLING ==================== */
+/* Container for the form rows */
+.new-trans {
+    margin-top: 10px;
+    padding-top: 20px;
+    border-top: 1px solid var(--bg-main);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-trans p {
+    color: var(--text-grey);
+    font-size: 0.85rem;
+    font-weight: 600;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Vertical gap between rows */
+    margin-bottom: 50px;
+    justify-content: space-evenly;
+}
+
+/* The Row Container */
+.half {
+    display: flex;
+    gap: 15px; /* Horizontal space between the two inputs */
+    width: 100%;
+}
+
+/* The Wrapper for Label + Input */
+.input-group {
+    display: flex;
+    flex-direction: column; /* Stacks Label on top of Input */
+    width: 50%; /* Each group takes half the space */
+}
+
+label {
+    color: rgb(167, 115, 216); /* Your purple color */
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+input {
+    width: 100%; /* Ensures input stays inside the group */
+    background-color: var(--bg-main);
+    border: 1px solid #334155;
+    color: var(--text-white);
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+select{
+    width: 100%; /* Ensures input stays inside the group */
+    background-color: var(--bg-main);
+    border: 1px solid #334155;
+    color: var(--text-white);
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+option{
+    color: var(--text-grey);
+}
+/* Optional: Make button full width */
+button {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    padding: 5px;
+}
+/* ==================== HISTORY LIST STYLING ==================== */
+
+.container h3 {
+    color: var(--text-white);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--bg-main);
+    padding-bottom: 10px;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 400px; /* Optional: Scroll if list gets too long */
+}
+
+.history-item {
+    background-color: var(--bg-main);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid transparent; /* The colored indicator */
+    transition: transform 0.2s;
+}
+
+.history-item:hover {
+    transform: translateX(5px);
+    background-color: #263345; /* Slightly lighter on hover */
+}
+
+/* Green Border for Income */
+.history-item.income {
+    border-left-color: var(--success);
+}
+
+/* Red Border for Expense */
+.history-item.expense {
+    border-left-color: var(--danger);
+}
+
+.trans-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.trans-info h4 {
+    color: var(--text-white);
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.trans-info span {
+    color: var(--text-grey);
+    font-size: 0.8rem;
+}
+
+.trans-amount {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Color the amount text too */
+.income .trans-amount {
+    color: var(--success);
+}
+
+.expense .trans-amount {
+    color: var(--danger);
+}
+.delete-btn {
+    background-color: #ef4444; /* Red */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.delete-btn:hover {
+    background-color: #b91c1c; /* Darker Red */
+}

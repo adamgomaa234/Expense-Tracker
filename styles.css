@@ -1,0 +1,281 @@
+:root {
+    /* THEME: Expenser Dark Mode */
+    
+    /* Primary: Bright Sky Blue (Matches the Dashboard) */
+    --primary: #38bdf8; 
+    --primary-hover: #0284c7;
+  
+    /* Background: Deepest Slate (The main page background) */
+    --bg: #0f172a; 
+    
+    /* Card: Slightly lighter Slate to stand out against the dark bg */
+    --card: #1e293b; 
+  
+    /* Text: White and Muted Blue-Grey */
+    --text: #f8fafc; 
+    --muted: #94a3b8; 
+  
+    /* Border: Subtle dark border */
+    --border: #334155;
+
+    /* Success/Alert Colors */
+    --danger: #ef4444; 
+    --warning: #f59e0b; 
+}
+    
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    /* REMOVED background-color here to stop "white boxes" around text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    color: var(--text);
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex; 
+    justify-content: space-between;
+    padding: 15px 25px;
+    background-color: var(--bg); /* Matches body or use var(--card) for contrast */
+    border-bottom: 1px solid var(--border);
+    position: fixed;
+    width: 100%;
+    z-index: 1000; /* Added to ensure it stays on top of dark content */
+}
+
+.navbar a {
+    padding-left: 20px;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--text); /* Ensure links are white */
+}
+#titled {
+    font-size: 1.7rem;
+    font-weight: 800;
+    margin-top: 2px;
+    color: var(--text-white);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+/* Buttons Container */
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* COMMON STYLES FOR BOTH BUTTONS */
+.btn-signin, .btn-signup {
+    text-decoration: none;
+    padding: 10px 15px;       /* Nice wide click area */
+    border-radius: 8px;       /* Rounded corners */
+    font-weight: 700;         /* Bold text */
+    font-size: 0.95rem;
+    transition: all 0.3s ease; /* Smooth animation */
+}
+
+/* ==================== 1. SIGN IN (Secondary) ==================== */
+/* Style: Ghost Button (Transparent with light border) */
+.btn-signin {
+    color: #f8fafc;           /* White Text */
+    background-color: transparent;
+    border: 1px solid #475569; /* Grey Border */
+}
+
+.btn-signin:hover {
+    background-color: #1e293b; /* Dark Grey background on hover */
+    border-color: #94a3b8;     /* Lighter border on hover */
+}
+
+/* ==================== 2. SIGN UP (Primary) ==================== */
+/* Style: Solid Color (Bright Blue) */
+.btn-signup {
+    background-color: #38bdf8; /* Bright Cyan/Blue */
+    color: #0f172a;            /* Dark Text (Contrast) */
+    border: 1px solid #38bdf8;
+    box-shadow: 0 4px 6px rgba(56, 189, 248, 0.25); /* Blue Glow */
+}
+
+.btn-signup:hover {
+    background-color: #0284c7; /* Darker Blue on hover */
+    color: white;              /* Text turns white */
+    border-color: #0284c7;
+    transform: translateY(-2px); /* Moves up slightly */
+    box-shadow: 0 6px 12px rgba(56, 189, 248, 0.4); /* Stronger Glow */
+}
+
+/* MAIN CONTENT */
+.main {
+    padding: 80px 120px;
+}
+
+.about {
+    width: 100%;
+    margin-top: 40px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-right: 80px;
+}
+
+.about-head h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 36px;
+    padding-bottom: 10px;
+    color: var(--primary); /* Blue */
+}
+
+.about-core p {
+    font-size: 20px;
+    word-spacing: 2px;
+    line-height: 1.6;
+    padding-top: 10px;
+    font-weight: 500;
+    color: var(--muted); /* Use muted for body text */
+}
+
+.about-core img {
+    width: 100%;
+    margin-right: 20px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: inset;
+    opacity: 0.9; /* Slight dim to blend with dark mode */
+}
+
+.about-core {
+    width: 80%;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* SERVICES GRID */
+.services-container {
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.services-header h2 {
+    color: var(--primary);
+    font-size: 50px;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.service-card {
+    background-color: var(--card); /* Dark Blue-Grey */
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 350px;
+    margin-top: 10px;
+    
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.4s ease; /* Added border transition */
+    
+    /* Dark mode shadow is usually black and subtle */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary); /* Glow border effect on hover */
+    
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.service-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.3rem;
+}
+
+/* CONTACT SECTION */
+.contact {
+    margin-top: 30px;
+}
+
+.contact-header {
+    align-items: center;
+    text-align: center;
+}
+
+.contact-header h2 {
+    color: var(--primary);
+}
+
+.contact-header p {
+    color: var(--muted); /* Changed to muted */
+}
+
+.contact-content {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding-right: 20px;
+    margin-right: 20px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 450px;
+    padding: 15px 25px;
+    border-left: 4px solid var(--primary);
+    background-color: transparent; /* Keep transparent by default */
+    border-radius: 0 8px 8px 0; /* Optional: rounds the right side */
+    transition: background-color 0.3s ease;
+}
+
+.info-item:hover {
+    background-color: var(--card); /* Highlights with the lighter dark color */
+}
+
+.info-item h4 {
+    color: var(--muted);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}

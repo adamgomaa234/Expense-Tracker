@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenser Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mains.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <h1>Expenser</h1>
+        </div>
+        
+        <div class="services">
+            <h3>Main Navigation</h3>
+            <ul>
+                <li> Create Expenses</li>
+                
+                <li> Manage Budget</li>
+                
+                <li> View Activity</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <a href="#">Settings</a>
+            <a href="#">Logout</a>
+        </div>
+    </nav>
+
+    <main>
+        
+        <header>
+            <div class="welcome">
+                <h2>Welcome back, Doma</h2>
+                <p>Here's what's happening with your money today.</p>
+            </div>
+            <div class="user-info">
+                <span>Dec 25, 2025</span>
+                <div class="profile-pic"></div> </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="card">
+                <h3>Total Spent</h3>
+                <p class="big-number">$2,450.00</p>
+            </div>
+            <div class="card">
+                <h3>Budget Left</h3>
+                <p class="big-number green">$650.00</p>
+            </div>
+            <div class="card">
+                <h3>Active Savings Tips</h3>
+                <p class="big-number blue">4 New Alerts</p>
+            </div>
+        </section>
+
+        <section class="middle-grid">
+            
+            <div class="card chart-container">
+                <div class="card-header">
+                    <h3>Spending Trends</h3>
+                </div>
+                <div class="chart-visual">
+                    <div class="fake-line"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Budget by Category</h3>
+                </div>
+                
+                <div class="budget-item">
+                    <div class="label">
+                        <span>Food</span>
+                        <span>70%</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-fill" style="width: 70%"></div>
+                    </div>
+                </div>
+
+                <div class="budget-item">
+                    <div class="label">
+                        <span>Rent</span>
+                        <span>100%</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-fill danger" style="width: 100%"></div>
+                    </div>
+                </div>
+
+                <div class="budget-item">
+                    <div class="label">
+                        <span>Fun</span>
+                        <span>30%</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div class="progress-fill success" style="width: 30%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-activity card">
+            <div class="card-header">
+                <h3>Recent Activity</h3>
+                <button class="view-btn">View All</button>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="muted">Dec 24</td>
+                        <td>Starbucks</td>
+                        <td>Food</td>
+                        <td class="price">-$5.50</td>
+                    </tr>
+                    <tr>
+                        <td class="muted">Dec 23</td>
+                        <td>Monthly Rent</td>
+                        <td>Housing</td>
+                        <td class="price">-$1,200.00</td>
+                    </tr>
+                    <tr>
+                        <td class="muted">Dec 22</td>
+                        <td>Amazon Prime</td>
+                        <td>Subs</td>
+                        <td class="price">-$14.99</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mains.css">
+    <link rel="stylesheet" href="expense.css">
+</head>
+<body>
+    <div class="head">
+        <h2>EXPENSE TRACKER</h2>
+    </div>
+    <div class="sides">
+    <div class="container">
+        <div class="container-head">
+            <h5>Balance Summary</h5>
+        </div>
+        <div class="balance">
+            <h6>Total Balance</h6>
+            <p id="total">$0.00</p>
+        </div>
+        <div class="totals">
+            <div class="incomes">
+                <h5>Total Income</h5>
+                <p id="totalIncome">$0</p>
+            </div>
+            <div class="amount">
+                <h5 >Total Expense</h5>
+                
+                <p id="totalExpense">$0.00</p>
+            </div>
+        </div>
+        <div class="new-trans">
+            <form id="form">
+                <p>Add New Transaction</p>
+                
+                <div class="half">
+                    <div class="input-group">
+                        <label for="type">Type</label>
+                        <select name="type" id="type">
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="amount">Amount</label>
+                        <input name="Amount" id="amount" type="number" placeholder="0.00" step="0.01">
+                    </div>
+                </div> 
+            
+                <div class="half"> 
+                    <div class="input-group">
+                        <label for="date">Date</label>
+                        <input name="Date" id="date" type="date">
+                    </div>
+                    <div class="input-group">
+                        <label for="category">Category</label>
+                        <input name="Category" id="category" type="text" placeholder="e.g. Food">
+                    </div>
+                </div>
+            
+                <button type="submit" id="submit-btn">Add Transaction</button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <h3>Transaction History</h3>
+        
+        <div class="history-list">
+    
+        </div>
+    </div>
+</div>
+<script src="expense_script.js"></script>
+</body>
+</html>
